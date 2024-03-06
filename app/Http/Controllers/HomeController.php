@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jurusan;
+use App\Models\News;
 use App\Models\SnapshotBackground;
 use App\Models\SnapshotGallery;
 use App\Models\SnapshotTeam;
@@ -26,6 +28,12 @@ class HomeController extends Controller
         $background = SnapshotBackground::all();
         $team = SnapshotTeam::all();
         $gallery = SnapshotGallery::all();
-        return view('landingpage.index', compact('background', 'team', 'gallery'));
+        $jurusan = Jurusan::all();
+        $news = News::all();
+
+        foreach ($news as $row) {
+            $row->formatted_tanggal = Carbon::parse($row->tanggal)->format('d M Y');
+        }
+        return view('landingpage.home', compact('background', 'team', 'gallery', 'jurusan', 'news'));
     }
 }

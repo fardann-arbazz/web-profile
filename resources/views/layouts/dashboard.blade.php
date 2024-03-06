@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
+    <title>Dashboard Pages</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Pignose Calender -->
@@ -126,9 +126,12 @@
                             <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Data Master</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('list-background') }}">Data Background</a></li>
-                            <li><a href="{{ route('list-team') }}">Data Team</a></li>
+                            <li><a href="{{ route('list-background') }}">Data Header</a></li>
+                            <li><a href="{{ route('list-team') }}">Data Guru</a></li>
                             <li><a href="{{ route('list-gallery') }}">Data Gallery</a></li>
+                            <li><a href="{{ route('list-news') }}">Data News</a></li>
+                            <li><a href="{{ route('list-jurusan') }}">Data Jurusan</a></li>
+                            <li><a href="#">Data Ekstrakulikuler</a></li>
                         </ul>
                     </li>
                 </ul>

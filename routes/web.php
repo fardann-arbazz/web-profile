@@ -4,6 +4,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BackgroundController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\JurusanController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +21,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'home']);
-
 
 // Auth
 Route::get('/login', [AuthController::class, 'index'])->name('login');
@@ -54,3 +55,19 @@ Route::post('/gallery/create', [GalleryController::class, 'store'])->name('store
 Route::get('/gallery/update/{id}', [GalleryController::class, 'edit'])->name('edit.gallery');
 Route::put('/gallery/update/{id}', [GalleryController::class, 'update'])->name('update.gallery');
 Route::delete('/gallery/delete/{id}', [GalleryController::class, 'delete'])->name('delete.gallery');
+
+// News Profil
+Route::get('/news', [NewsController::class, 'index'])->name('list-news');
+Route::get('/news/create', [NewsController::class, 'create'])->name('create-news');
+Route::post('/news/store', [NewsController::class, 'store'])->name('store-news');
+Route::get('/news/update/{id}', [NewsController::class, 'edit'])->name('edit-news');
+Route::put('/news/update{id}', [NewsController::class, 'update'])->name('update-news');
+Route::delete('/news/delete/{id}', [NewsController::class, 'delete'])->name('delete-news');
+
+// Jurusan Profile
+Route::get('/jurusan', [JurusanController::class, 'index'])->name('list-jurusan');
+Route::get('/jurusan/create', [JurusanController::class, 'create'])->name('create-jurusan');
+Route::post('/jurusan/store', [JurusanController::class, 'store'])->name('store-jurusan');
+Route::get('/jurusan/update/{id}', [JurusanController::class, 'edit'])->name('edit-jurusan');
+Route::put('/jurusan/update/{id}', [JurusanController::class, 'update'])->name('update-jurusan');
+Route::delete('/jurusan/delete/{id}', [JurusanController::class, 'delete'])->name('delete-jurusan');
